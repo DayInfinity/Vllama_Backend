@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from routes.image.route import generate_image
+from routes.video.video_kaggle import generate_video
 from routes.health.health import health_check
 
 app = Flask(__name__)
@@ -9,6 +10,11 @@ CORS(app)  # Enable CORS for Next.js frontend
 
 # Image URLs
 app.add_url_rule('/api/generate/image', 'generate_image', generate_image, methods=['POST'])
+
+
+# Video URLs
+app.add_url_rule('/api/generate/video', 'generate_video', generate_video, methods=['POST'])
+
 
 # Health Check
 app.add_url_rule('/health', 'health_check', health_check, methods=['GET'])
