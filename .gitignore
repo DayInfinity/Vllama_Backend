@@ -6,3 +6,4 @@ outputs/
 venv
 *.log
 *.sqlite3
+*.wav
