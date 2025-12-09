@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from routes.image.route import generate_image
 from routes.video.video_kaggle import generate_video
+from routes.audio.audio import generate_audio
 from routes.health.health import health_check
 
 app = Flask(__name__)
@@ -14,6 +15,10 @@ app.add_url_rule('/api/generate/image', 'generate_image', generate_image, method
 
 # Video URLs
 app.add_url_rule('/api/generate/video', 'generate_video', generate_video, methods=['POST'])
+
+
+# Audio URLs
+app.add_url_rule('/api/generate/audio', 'generate_audio', generate_audio, methods=['POST'])
 
 
 # Health Check
