@@ -38,7 +38,7 @@ def generate_transcription():
         model_id = model_mapping.get(model, 'openai/whisper-small')
         
         # Generate transcription
-        transcription = transcribe_from_path(path=path, model_id=model_id, language=language)
+        transcription = transcribe_from_path(path = path, model_id = model_id, language = language)
         
         print(" Transcription:", transcription)
 
