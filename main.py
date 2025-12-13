@@ -6,6 +6,7 @@ from routes.video.video_kaggle import generate_video
 from routes.audio.audio import generate_audio
 from routes.health.health import health_check
 from routes.STT.stt import generate_transcription
+from routes.translate.translate import generate_translation
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for Next.js frontend
@@ -20,6 +21,10 @@ app.add_url_rule('/api/generate/video', 'generate_video', generate_video, method
 
 # Transcription URLs
 app.add_url_rule('/api/generate/transcription', 'generate_transcription', generate_transcription, methods=['POST'])
+
+
+# Translation URLs
+app.add_url_rule('/api/generate/translation', 'generate_translation', generate_translation, methods=['POST'])
 
 
 # Audio URLs
