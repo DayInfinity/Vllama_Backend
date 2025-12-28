@@ -36,7 +36,7 @@ app.add_url_rule('/api/generate/audio', 'generate_audio', generate_audio, method
 app.add_url_rule('/health', 'health_check', health_check, methods=['GET'])
 
 
-# 3D Image URLs
+# Image to 3d URLs
 app.add_url_rule('/api/generate/3d', 'generate_3d', generate_3d, methods=['POST'])
 
 
