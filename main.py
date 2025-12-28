@@ -8,6 +8,7 @@ from routes.health.health import health_check
 from routes.STT.stt import generate_transcription
 from routes.translate.translate import generate_translation
 from routes.image3d.image3d import generate_3d
+from routes.object_detect.image_obj_det import generate_object_detection_image
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for Next.js frontend
@@ -39,6 +40,9 @@ app.add_url_rule('/health', 'health_check', health_check, methods=['GET'])
 # Image to 3d URLs
 app.add_url_rule('/api/generate/3d', 'generate_3d', generate_3d, methods=['POST'])
 
+
+# Object Detection URLs
+app.add_url_rule('/api/generate/object_detection_image', 'generate_object_detection_image', generate_object_detection_image, methods=['POST'])
 
 
 if __name__ == '__main__':
