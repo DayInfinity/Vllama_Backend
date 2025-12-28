@@ -7,6 +7,7 @@ from routes.audio.audio import generate_audio
 from routes.health.health import health_check
 from routes.STT.stt import generate_transcription
 from routes.translate.translate import generate_translation
+from routes.image3d.image3d import generate_3d
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for Next.js frontend
@@ -33,6 +34,11 @@ app.add_url_rule('/api/generate/audio', 'generate_audio', generate_audio, method
 
 # Health Check
 app.add_url_rule('/health', 'health_check', health_check, methods=['GET'])
+
+
+# Image to 3d URLs
+app.add_url_rule('/api/generate/3d', 'generate_3d', generate_3d, methods=['POST'])
+
 
 
 if __name__ == '__main__':

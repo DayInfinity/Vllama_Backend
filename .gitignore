@@ -7,3 +7,14 @@ venv
 *.log
 *.sqlite3
 *.wav
+
+*.jpg
+*.png
+*.jpeg
+*.MOV
+*.mp4
+*.pt
+
+
+functions/object_detect/image_detection.py
+functions/object_detect/video_detection.py
