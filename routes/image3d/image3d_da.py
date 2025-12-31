@@ -3,7 +3,7 @@ from io import BytesIO
 import base64
 import tempfile
 from pathlib import Path
-from functions.image3d.image3dRemote import run_kaggle_image_to_3d  # Adjust import path as needed
+from functions.image3d.image3dRemoteDA import run_kaggle_image_to_3d  # Adjust import path as needed
 import trimesh  # Add this import
 
 import numpy as np
@@ -73,14 +73,12 @@ def generate_3d():
             return jsonify({'error': 'No image file provided'}), 400
         
         image_file = request.files['image']
-
-        fields = request.form
-
-        username = fields.get('username', 'default_user')
-        print(f"Username: {username}")
-        api_key = fields.get('apiKey', '1234')
-        print(f"API Key: {api_key[:5]}****")
         
+        data = request.form
+
+        username = data.get('username', 'default_user')
+        api_key = data.get('apiKey', '1234')
+
         # Validate file exists
         if image_file.filename == '':
             return jsonify({'error': 'No image file selected'}), 400
@@ -102,7 +100,7 @@ def generate_3d():
         
         # Generate 3D model (pass image bytes directly)
         # This returns the path to the generated PLY file
-        ply_file_path = run_kaggle_image_to_3d(image_data, str(output_dir))
+        ply_file_path = run_kaggle_image_to_3d(image_data, str(output_dir), username = username, api_key = api_key)
         ply_file_path = Path(ply_file_path)
         
         # Convert PLY to GLB

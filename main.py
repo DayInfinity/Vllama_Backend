@@ -7,7 +7,8 @@ from routes.audio.audio import generate_audio
 from routes.health.health import health_check
 from routes.STT.stt import generate_transcription
 from routes.translate.translate import generate_translation
-from routes.image3d.image3d import generate_3d
+# from routes.image3d.image3d import generate_3d
+from routes.image3d.image3d_da import generate_3d
 from routes.object_detect.image_obj_det import generate_object_detection_image
 
 app = Flask(__name__)
