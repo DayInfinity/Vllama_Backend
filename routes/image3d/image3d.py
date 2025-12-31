@@ -73,6 +73,13 @@ def generate_3d():
             return jsonify({'error': 'No image file provided'}), 400
         
         image_file = request.files['image']
+
+        fields = request.form
+
+        username = fields.get('username', 'default_user')
+        print(f"Username: {username}")
+        api_key = fields.get('apiKey', '1234')
+        print(f"API Key: {api_key[:5]}****")
         
         # Validate file exists
         if image_file.filename == '':
