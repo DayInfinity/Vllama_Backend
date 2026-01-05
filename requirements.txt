@@ -1,7 +1,37 @@
+# Web Framework
 flask
 flask-cors
+
+# Core ML Libraries
 torch
-diffusers
 transformers
+diffusers
 accelerate
+
+# Image Processing
 pillow
+opencv-python
+
+# Object Detection
+ultralytics
+
+# Audio Processing
+soundfile
+numpy
+
+# Video Processing
+imageio
+imageio-ffmpeg
+
+# 3D Mesh Processing
+trimesh
+plyfile
+
+# Kaggle Integration
+kaggle
+
+# HTTP Requests
+requests
+
+# Production Server
+gunicorn
