@@ -1,0 +1,56 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+.eggs
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Outputs (regenerated on server)
+outputs/
+*.png
+*.jpg
+*.mp4
+*.wav
+*.ply
+
+# Model files (will be downloaded on first run)
+*.pt
+*.safetensors
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Test files
+test.py
+tests/
