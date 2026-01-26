@@ -10,6 +10,7 @@ from routes.translate.translate import generate_translation
 # from routes.image3d.image3d import generate_3d
 from routes.image3d.image3d_da import generate_3d
 from routes.object_detect.image_obj_det import generate_object_detection_image
+from routes.video3d.video3dRoute import generate_3d_from_video
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for Next.js frontend
@@ -40,6 +41,10 @@ app.add_url_rule('/health', 'health_check', health_check, methods=['GET'])
 
 # Image to 3d URLs
 app.add_url_rule('/api/generate/3d', 'generate_3d', generate_3d, methods=['POST'])
+
+
+# Video to 3d URLs
+app.add_url_rule('/api/generate/generate_video_3d', 'generate_3d_from_video', generate_3d_from_video, methods=['POST'])
 
 
 # Object Detection URLs
