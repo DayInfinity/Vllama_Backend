@@ -35,3 +35,6 @@ requests
 
 # Production Server
 gunicorn
+
+# Video Processing
+imageio-ffmpeg==0.4.9
