@@ -53,4 +53,4 @@ app.add_url_rule('/api/generate/object_detection_image', 'generate_object_detect
 
 if __name__ == '__main__':
     # Run on port 5000 (or whatever you want)
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)

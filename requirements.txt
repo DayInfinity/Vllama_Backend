@@ -37,4 +37,8 @@ requests
 gunicorn
 
 # Video Processing
-imageio-ffmpeg==0.4.9
+imageio-ffmpeg==0.6.0
+
+open3d
+
+pyrender
